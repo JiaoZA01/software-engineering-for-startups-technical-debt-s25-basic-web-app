@@ -18,11 +18,22 @@ describe("QueryProcessor", () => {
           ));
     });
 
+    test('should return ziang jiao description', () => {
+        const query = "ziang jiao";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "Ziang Jiao (2 February 2001 - Now) is a " +
+            "mastermind in engineering, coding, and problem-solving. Also, a " +
+            "good bro."
+          ));
+    });
+
+
     test('should return name', () => {
         const query = "What is your name?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "Rohan"
+            "Your dad"
           ));
     })
 });

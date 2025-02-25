@@ -46,5 +46,11 @@ if (query.toLowerCase().includes("rickroll")) {
     );
   }
 
+if (query.toLowerCase().includes("name")) {
+  return (
+    "Your dad"
+  );
+}
+
   return "";
 }
