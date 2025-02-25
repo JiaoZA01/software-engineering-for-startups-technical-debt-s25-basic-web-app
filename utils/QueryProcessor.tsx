@@ -48,7 +48,7 @@ if (query.toLowerCase().includes("rickroll")) {
 
 if (query.toLowerCase().includes("name")) {
   return (
-    "Ziang Ethan 2"
+    "TEAM 777"
   );
 }
 
