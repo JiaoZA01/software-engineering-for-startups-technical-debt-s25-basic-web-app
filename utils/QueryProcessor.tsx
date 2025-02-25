@@ -52,28 +52,30 @@ if (query.toLowerCase().includes("name")) {
   );
 }
 
-if (query.toLowerCase().includes("plus")) {
-  const match = query.toLowerCase().match(/(\d+)\s*plus\s*(\d+)/);
-  let sum = 0;
-  if (match) {
-    const num1 = parseInt(match[1], 10);
-    const num2 = parseInt(match[2], 10);
-    sum = num1 + num2;
+if (query.toLowerCase().includes("largest")) {
+  const matches = query.match(/\d+/g); // Find all numbers in the query
+  if (matches) {
+    const numbers = matches.map(Number); // Convert all found strings to numbers
+    const largest = Math.max(...numbers); // Find the largest number
+    return largest.toString(); // Return the largest number as a string
   }
-  return sum.toString();
-  
 }
 
-if (query.toLowerCase().includes("minus")) {
-  const match = query.toLowerCase().match(/(\d+)\s*minus\s*(\d+)/);
-  let sum = 0;
-  if (match) {
-    const num1 = parseInt(match[1], 10);
-    const num2 = parseInt(match[2], 10);
-    sum = num1 - num2;
+if (query.toLowerCase().includes("plus")){
+  const parts = query.match(/(\d+)\s+plus\s+(\d+)/i);
+  if (parts && parts.length === 3) { // Check if the match was successful and we have the correct parts
+    const num1 = parseInt(parts[1], 10); // First number
+    const num2 = parseInt(parts[2], 10); // Second number
+    return (num1 + num2).toString(); // Perform the addition and return the result as a string
   }
-  return sum.toString();
-  
+}
+if (query.toLowerCase().includes("minus")){
+  const parts = query.match(/(\d+)\s+minus\s+(\d+)/i);
+  if (parts && parts.length === 3) { // Check if the match was successful and we have the correct parts
+    const num1 = parseInt(parts[1], 10); // First number
+    const num2 = parseInt(parts[2], 10); // Second number
+    return (num1 - num2).toString(); // Perform the addition and return the result as a string
+  }
 }
 
 
