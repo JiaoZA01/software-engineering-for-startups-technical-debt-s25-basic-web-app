@@ -52,5 +52,30 @@ if (query.toLowerCase().includes("name")) {
   );
 }
 
+if (query.toLowerCase().includes("plus")) {
+  const match = query.toLowerCase().match(/(\d+)\s*plus\s*(\d+)/);
+  let sum = 0;
+  if (match) {
+    const num1 = parseInt(match[1], 10);
+    const num2 = parseInt(match[2], 10);
+    sum = num1 + num2;
+  }
+  return sum.toString();
+  
+}
+
+if (query.toLowerCase().includes("minus")) {
+  const match = query.toLowerCase().match(/(\d+)\s*minus\s*(\d+)/);
+  let sum = 0;
+  if (match) {
+    const num1 = parseInt(match[1], 10);
+    const num2 = parseInt(match[2], 10);
+    sum = num1 - num2;
+  }
+  return sum.toString();
+  
+}
+
+
   return "";
 }
