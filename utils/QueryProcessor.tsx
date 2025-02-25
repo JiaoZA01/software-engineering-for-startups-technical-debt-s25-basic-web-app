@@ -79,13 +79,20 @@ if (query.toLowerCase().includes("minus")){
 }
 if (query.toLowerCase().includes("multiplied")){
   const parts = query.match(/(\d+)\s+multiplied by\s+(\d+)/i);
-  if (parts && parts.length === 3) { // Check if the match was successful and we have the correct parts
+  if (parts && parts.length === 4) { // Check if the match was successful and we have the correct parts
     const num1 = parseInt(parts[1], 10); // First number
     const num2 = parseInt(parts[2], 10); // Second number
     return (num1 * num2).toString(); // Perform the addition and return the result as a string
   }
 }
-
+if (query.toLowerCase().includes("power")){
+  const parts = query.match(/(\d+)\s+to the power of\s+(\d+)/i);
+  if (parts && parts.length === 6) { // Check if the match was successful and we have the correct parts
+    const num1 = parseInt(parts[1], 10); // First number
+    const num2 = parseInt(parts[2], 10); // Second number
+    return (num1 ** num2).toString(); // Perform the addition and return the result as a string
+  }
+}
 
 
 
